@@ -1,13 +1,13 @@
 var info      = require('../package.json');
 var path      = require('path');
 
-var clientAppPath = path.join(__dirname, '../');
+var clientAppPath = path.join(__dirname, '../app/');
 
 var devRelativeOutput     = '/assets/';
 var prodRelativeOutput    = '/assets/';
 
-var devOutput     = path.join(__dirname, devRelativeOutput);
-var prodOutput    = path.join(__dirname, '../build' + prodRelativeOutput);
+var devOutput     = path.join(__dirname, '../app', devRelativeOutput);
+var prodOutput    = path.join(__dirname, '../build', prodRelativeOutput);
 
 var hotPort = process.env.ASSETS_PORT || 8080;
 
@@ -29,8 +29,7 @@ module.exports = {
   hotPort: hotPort,
   
   entries: {
-    app: clientAppPath + 'js/app.jsx',
-    styles: clientAppPath + 'styles/styles.js'
+    app: clientAppPath + 'js/app.jsx'
   }
 
 };
