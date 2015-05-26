@@ -56,7 +56,7 @@ class Index extends BaseComponent{
     const githubButton = (
       <IconButton
         iconStyle={styles.iconButton}
-        iconClassName="muidocs-icon-custom-github"
+        iconClassName="icon-github"
         href="https://github.com/jbasdf/react-kindling-firebase"
         linkButton={true} />
     );

@@ -3,6 +3,7 @@
 import React             from 'react';
 import Router            from 'react-router';
 import Routes            from './routes';
+import FontIcons         from '../styles/font-icons/style.css';
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
