@@ -5,6 +5,7 @@ import Router       from 'react-router';
 
 import Index        from './components/index';
 import Home         from './components/main/home';
+import Login         from './components/main/login';
 import NotFound     from './components/not_found';
 
 var Route         = Router.Route;
@@ -12,11 +13,10 @@ var NotFoundRoute = Router.NotFoundRoute;
 var DefaultRoute  = Router.DefaultRoute;
 var Redirect      = Router.Redirect;
 
-var routes = (
-  <Route handler={Index}>
-    <DefaultRoute name="home" handler={Home}/>
+export default (
+  <Route name='root' path='/' handler={Index}>
+    <Route name='login' handler={Login} />
+    <DefaultRoute name='home' handler={Home}/>
     <NotFoundRoute handler={NotFound}/>
   </Route>
 );
-
-module.exports = routes;

@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>React-Kindling-Firebase</title>
+  <meta name="description" content="Starter project for creating material ui projects with firebase.">
 </head>
 <body>
-@@include('./partials/header.html')
-require("html!./fileA.html");
-  <p>This file is served directly from the Webpack dev server and is used to
-  to test the app_web_pack_bundle.js directly and to test the webpack configuration.</p>
   <div id="app-container"></div>
+  <script>
+    var WebFontConfig = {
+      google: { families: [ 'Roboto:400,300,500:latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
   <script src="assets/app_web_pack_bundle.js"></script>
 </body>
 </html>

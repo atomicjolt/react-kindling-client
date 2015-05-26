@@ -12,8 +12,9 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 
 Router.run(Routes, (Handler, state) => {
-  var params = state.params;
-  return React.render(<Handler params={params} />, document.getElementById('app-container'));
+  let params = state.params;
+  return React.render(
+  	<Handler params={state} />, document.getElementById('app-container'));
 });
 
 // Use the HTML5 history API for cleaner URLs:
