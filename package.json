@@ -1,10 +1,10 @@
 {
-  "name": "react-kindling-firebase",
+  "name": "react-kindling-client",
   "version": "0.0.1",
-  "description": "Example using Firebase with React.",
+  "description": "Basic React Client.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbasdf/react-kindling-firebase"
+    "url": "https://github.com/jbasdf/react-kindling-client"
   },
   "scripts": {
     "test": "karma start",
@@ -14,11 +14,10 @@
   },
   "author": "jbasdf bpetersen",
   "license": "MIT",
-  "homepage": "https://github.com/jbasdf/react-kindling-firebase",
+  "homepage": "https://github.com/jbasdf/react-kindling-client",
   "dependencies": {
     "babel": "^5.3.3",
     "babel-runtime": "^5.3.3",
-    "firebase": "^2.2.2",
     "flux": "^2.0.3",
     "lodash": "^3.8.0",
     "material-ui": "^0.8.0",
