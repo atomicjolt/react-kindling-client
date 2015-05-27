@@ -57,7 +57,7 @@ class Index extends BaseComponent{
       <IconButton
         iconStyle={styles.iconButton}
         iconClassName="icon-github"
-        href="https://github.com/jbasdf/react-kindling-firebase"
+        href="https://github.com/jbasdf/react-kindling-client"
         linkButton={true} />
     );
     return (
