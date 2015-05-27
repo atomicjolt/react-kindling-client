@@ -1,21 +1,15 @@
 import React from 'react';
 import Router from 'react-router';
 import mui, {Styles, MenuItem, LeftNav} from 'material-ui'; 
-//import {MenuItem, LeftNav} from 'material-ui';
-//import {Colors, Spacing, Typography} from mui.Styles;
 
 const Colors = Styles.Colors;
 const Spacing = Styles.Spacing;
 const Typography = Styles.Typography;
-// var React = require('react');
-// var Router = require('react-router');
-// var mui = require('mui');
-// var {MenuItem, LeftNav} = mui;
-// var {Colors, Spacing, Typography} = mui.Styles;
 
 var menuItems = [
     { route: 'login', text: 'Login' },
     { route: 'home', text: 'Home' },
+    { route: 'register', text: 'Register' },
   ];
 
 class AppLeftNav extends React.Component {

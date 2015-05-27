@@ -14,7 +14,6 @@ class Home extends BaseComponent{
   	let divStyle = {
   		root: {
   			paddingTop: Spacing.desktopKeylineIncrement,
-  			fontFamily: 'Roboto'
   		},
   		text: {
   			backgroundColor: Colors.yellow500,
