@@ -1,10 +1,10 @@
 // karma config info: http://karma-runner.github.io/0.12/config/configuration-file.html
 module.exports = function(config) {
-  
+
   function isCoverage(argument) {
     return argument === '--coverage';
   }
-  
+
   // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
   var reporters = ['spec'];
 
@@ -28,11 +28,9 @@ module.exports = function(config) {
 
     files: [
       './specs_support/spec_helper.js',
-      './specs_support/mock_ajax.js',
       //'./js/**/*.spec.js'         // Use webpack to build each test individually. If changed here, match the change in preprocessors
-      './webpack.tests.js'         // More performant but tests cannot be run individually
+      './webpack.tests.js'          // More performant but tests cannot be run individually
     ],
-
 
     // Transpile tests with the karma-webpack plugin
     preprocessors: {
@@ -57,7 +55,7 @@ module.exports = function(config) {
     autoWatch: true,
 
     // Use jasmine as the test framework
-    frameworks: ['jasmine-jquery', 'jasmine'],
+    frameworks: ['jasmine-ajax', 'jasmine'],
 
     reporters: reporters,
 
@@ -67,8 +65,10 @@ module.exports = function(config) {
       devtool: 'eval',
       module: {
         loaders: [
-          { test: /\.js$/,   exclude: /node_modules/, loader: "babel-loader" },
-          { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" }
+          { test: /\.js$/,   exclude: /node_modules/, loader: "babel-loader?stage=0&optional=runtime" },
+          { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader?stage=0&optional=runtime" },
+          { test: /\.(png|woff|woff2|eot|ttf|svg)($|\?)/, loader: 'url-loader' },
+          { test: /\.css$/, loader: 'css-loader'}
         ]
       },
       resolve: {
