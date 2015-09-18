@@ -32,7 +32,7 @@ Source code lives in the app directory.
 
   Build:
 
-  `npm run build`
+  `gulp build --release`
   
   Deploy:
   `s3_website push`
@@ -40,3 +40,4 @@ Source code lives in the app directory.
 
 License and attribution
 -----------------------
+MIT
