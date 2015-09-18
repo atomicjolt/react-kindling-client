@@ -30,7 +30,7 @@ Object.keys(pkgs).forEach(function (key) { return pkgs[key] = pkgs[key].substrin
 gulp.task('clean', function(cb){
   if(release){
     var rimraf = require('rimraf');
-    rimraf(outputPath, cb);  
+    rimraf(outputPath, cb);
   }
 });
 
@@ -38,8 +38,6 @@ gulp.task('clean', function(cb){
 // -----------------------------------------------------------------------------
 gulp.task('vendor', function(){
   return es.merge(
-    gulp.src('./node_modules/jquery/dist/**')
-      .pipe(gulp.dest(outputPath + '/vendor/jquery-' + pkgs.jquery)),
     gulp.src('./node_modules/bootstrap-sass/assets/fonts/**')
       .pipe(gulp.dest(outputPath + '/fonts')),
     gulp.src('./node_modules/font-awesome/fonts/**')
