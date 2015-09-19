@@ -58,8 +58,8 @@ gulp.task('assets', function(){
 
 // Compile html
 // -----------------------------------------------------------------------------
-gulp.task('html', function(){
-  return gulp.src('./app/html/*.tpl.html')
+gulp.task('tpl', function(){
+  return gulp.src('./app/**/*.tpl.html')
     .pipe(fileinclude())
     .pipe(rename({
       extname: ""
@@ -72,7 +72,30 @@ gulp.task('html', function(){
         collapseWhitespace: true,
         minifyJS: true
     }))
-    //  .pipe(release ? $.util.noop() : $.embedlr())
+    .pipe(gulp.dest(outputPath));
+});
+
+// Copy html files
+// -----------------------------------------------------------------------------
+gulp.task('html', function(){
+  return gulp.src('./app/**/*.html')
+    .pipe(!release ? $.util.noop() : $.htmlmin({
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true
+    }))
+    .pipe(gulp.dest(outputPath));
+});
+
+// Copy other files
+// -----------------------------------------------------------------------------
+gulp.task('approot', function(){
+  return gulp.src('./app/**/*')
+    .pipe(!release ? $.util.noop() : $.htmlmin({
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true
+    }))
     .pipe(gulp.dest(outputPath));
 });
 
@@ -86,7 +109,6 @@ gulp.task('styles', function(){
     .on('error', $.util.log)
     .pipe(release ? $.minifyCss() : $.util.noop())
     .pipe(gulp.dest(outputPath + '/css'));
-
 });
 
 // Create JavaScript bundle
@@ -109,7 +131,7 @@ gulp.task('javascript', function(cb){
 // Build the app from source code
 // -----------------------------------------------------------------------------
 gulp.task('build', ['clean'], function(cb){
-  runSequence(['vendor', 'assets', 'styles', 'javascript', 'html', 'approot'], cb);
+  runSequence(['vendor', 'assets', 'styles', 'javascript', 'tpl', 'html', 'approot'], cb);
 });
 
 
