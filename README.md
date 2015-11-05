@@ -1,3 +1,10 @@
+#NOTE
+-----------------------
+
+This project is no longer maintained. We've made a number of changes and moved to:
+https://github.com/atomicjolt/react_client_starter_app
+
+
 #Notes:
 -----------------------
 Start server with:
